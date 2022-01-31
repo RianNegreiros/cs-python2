@@ -1,3 +1,6 @@
+from math import pow
+
+
 class Triangulo:
 
     def __init__(self, a, b, c):
@@ -15,3 +18,18 @@ class Triangulo:
             return "isósceles"
         else:
             return "escaleno"
+
+    def retangulo(self):
+        if pow(self.c, 2) == pow(self.a, 2) + pow(self.b, 2):
+            return True
+        else:
+            return False
+
+    def semelhantes(self, triangulo):
+        if (self.a / triangulo.a == self.b / triangulo.b
+                and self.b / triangulo.b == self.c / triangulo.c
+                and self.c / triangulo.c == self.a / triangulo.a):
+            return True
+        return False
+
+
